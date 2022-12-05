@@ -3,31 +3,19 @@
 
 int main(void)
 {
-  int i;
-  for (i = 0; i < 500; i++)
+  int num1 = get_int("Num1: ");
+  int num2 = get_int("Num2: ");
+  printf("%i\n", num1 + num2);
+  char go_on = get_char("Do you want to continue (y / n): ");
+  if (go_on == 'y')
   {
-    float num1 = get_float("Write the first number: ");
-    char process = get_char("What do you want (+, -, *, /): ");
-    float num2 = get_float("Write the second number: ");
-    if (process == '+')
-    {
-      printf("%f\n", num1 + num2);
-    }
-    else if (process == '-')
-    {
-      printf("%f\n", num1 - num2);
-    }
-    else if (process == '*')
-    {
-      printf("%f\n", num1 * num2);
-    }
-    else if (process == '/')
-    {
-      printf("%f\n", num1 / num2);
-    }
-    else
-    {
-      printf("Please write an oprator.\n");
-    }
+    num1 = get_int("Num1: ");
+    num2 = get_int("Num2: ");
+    printf("%i\n", num1 + num2);
+    go_on = get_char("Do you want to continue (y / n): ");
+  }
+  else
+  {
+    printf("Okay");
   }
 }
